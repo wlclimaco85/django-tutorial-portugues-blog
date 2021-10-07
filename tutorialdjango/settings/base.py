@@ -25,7 +25,7 @@ SECRET_KEY = "u_)i-@maopc49apb(z@)kz%4^#1f3cpg6_5@=w-*6&f9t(@)#l"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["cryptic-fjord-25311.herokuapp.com"]
 
 
 # Application definition
