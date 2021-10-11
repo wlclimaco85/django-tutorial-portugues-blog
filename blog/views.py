@@ -1,4 +1,6 @@
 from django.views.generic import DetailView, ListView
+from rest_framework import viewsets
+from post.serializer import PostSerializer
 
 from .models import Post
 
@@ -9,3 +11,7 @@ class PostListView(ListView):
 
 class PostDetailView(DetailView):
     model = Post
+
+class PostViewSet(viewsets.ModelViewSet):
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
