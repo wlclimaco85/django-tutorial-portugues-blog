@@ -16,14 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.contrib.auth.models import User
 from django.urls import include, path
-from post.views import PostViewSet
+from blog.views import PostViewSet
 from rest_framework import routers, serializers, viewsets
 
 router = routers.DefaultRouter()
 router.register(r'blog', PostViewSet)
 
 urlpatterns = [
-    path('aaaa/',include(router.urls)),
+    path('',include(router.urls)),
     path("admin/", admin.site.urls),
     path("blog/", include("blog.urls", namespace="blog")),
     path('api-auth/', include('rest_framework.urls')),
