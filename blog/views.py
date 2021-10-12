@@ -1,7 +1,7 @@
 from django.views.generic import DetailView, ListView
 from rest_framework import viewsets
-from serializer import PostSerializer
 from .models import Post
+from .serializer import PostSerializer
 
 
 
