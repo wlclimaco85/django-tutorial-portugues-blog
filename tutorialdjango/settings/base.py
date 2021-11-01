@@ -26,7 +26,7 @@ SECRET_KEY = "u_)i-@maopc49apb(z@)kz%4^#1f3cpg6_5@=w-*6&f9t(@)#l"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*','192.168.100.190','192.168.3.1','192.168.181.1']
 
 
 # Application definition
