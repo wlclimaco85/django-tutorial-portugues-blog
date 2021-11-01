@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     "blog.apps.BlogConfig",
     "rest_framework",
     "rest_framework_simplejwt",
+    "django_filters",
+    "users.apps.UsersConfig",
 ]
 
 MIDDLEWARE = [
@@ -107,7 +109,8 @@ AUTH_PASSWORD_VALIDATORS = [
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
-    )
+    ),
+    'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend',)
 }
 
 
@@ -145,3 +148,8 @@ AWS_STORAGE_BUCKET_NAME = 'bity-library-pedroimpulcetto'
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+
+# User Model
+
+AUTH_USER_MODEL = "users.User"

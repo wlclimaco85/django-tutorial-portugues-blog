@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from blog.views import ParceiroViewSet, PostViewSet
+from users.views import UserViewSet
 from django.conf.urls.static import static
 from rest_framework import routers, serializers, viewsets
 from django.conf import settings
@@ -26,6 +27,7 @@ from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 router = routers.DefaultRouter()
 #router.register(r'blog', PostViewSet)
 router.register(r'blog', PostViewSet, basename="Blog")
+router.register(r'user', UserViewSet, basename="User")
 router.register(r'parceiro', ParceiroViewSet)
 
 urlpatterns = [
