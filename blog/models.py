@@ -37,7 +37,7 @@ class Parceiro(models.Model):
 
 class Xmls(models.Model):
     nomeFile = models.CharField(max_length=255)
-    cnpj = models.CharField(max_length=255, unique=True)
+    cnpj = models.CharField(max_length=255)
     xml = models.CharField(max_length=2055)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     parceiro = models.ForeignKey(Parceiro, on_delete=models.CASCADE)
@@ -60,6 +60,7 @@ class StatusMaquinas(models.Model):
         ordering = ("-created",)
     def __str__(self):
         return self.nomeMaquina
+
 
     
 
