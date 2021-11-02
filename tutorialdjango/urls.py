@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
-from blog.views import ParceiroViewSet, PostViewSet
+from blog.views import ParceiroViewSet, PostViewSet, StatusMaquinasViewSet, XmlsViewSet
 from users.views import UserViewSet
 from django.conf.urls.static import static
 from rest_framework import routers, serializers, viewsets
@@ -29,6 +29,8 @@ router = routers.DefaultRouter()
 router.register(r'blog', PostViewSet, basename="Blog")
 router.register(r'user', UserViewSet, basename="User")
 router.register(r'parceiro', ParceiroViewSet)
+router.register(r'xml', XmlsViewSet )
+router.register(r'statusMaquinas', StatusMaquinasViewSet )
 
 urlpatterns = [
     path('admin/', admin.site.urls),
