@@ -48,7 +48,7 @@ class Xmls(models.Model):
     class meta:
         ordering = ("-created",)
     def __str__(self):
-        return self.nome
+        return self.nomeFile
 
 class StatusMaquinas(models.Model):
     nomeMaquina = models.CharField(max_length=255)
@@ -59,7 +59,7 @@ class StatusMaquinas(models.Model):
     class meta:
         ordering = ("-created",)
     def __str__(self):
-        return self.nome
+        return self.nomeMaquina
 
     
 
