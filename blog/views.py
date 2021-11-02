@@ -14,10 +14,12 @@ from rest_framework.decorators import action
 class ParceiroFilter(filters.FilterSet):
     class Meta:
         model = Parceiro
-        fields = {
-            'cnpj': ['icontains'],
-            'created': ['iexact', 'lte', 'gte'],
-        }
+        fields = (
+            'cnpj','author','created'
+        )
+        #    'cnpj': ['icontains'],
+       #     'created': ['iexact', 'lte', 'gte'],
+        
 
 class PostListView(ListView):
     model = Post
