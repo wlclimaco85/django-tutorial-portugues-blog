@@ -36,7 +36,7 @@ class Parceiro(models.Model):
         return self.nome
 
 class Xmls(models.Model):
-    nomeFile = models.CharField(max_length=255)
+    nomeFile = models.CharField(max_length=255, unique=True)
     cnpj = models.CharField(max_length=255)
     xml = models.CharField(max_length=20000)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
