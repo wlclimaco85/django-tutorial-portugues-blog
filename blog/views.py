@@ -97,9 +97,29 @@ class XmlsDetailView(DetailView):
     model = Xmls
 
 class XmlsViewSet(viewsets.ModelViewSet):
-    permission_classes = [IsAuthenticated]
+   #permission_classes = [IsAuthenticated]
     queryset = Xmls.objects.all()
     serializer_class = XmlsSerializer
+
+    @action(methods=['get'], detail=False)
+    def newest(self, request):
+        newest = self.get_queryset().order_by('created').last()
+        serializer = self.get_serializer_class()(newest)
+        return Response(serializer.data)
+
+    def destroy(self, request, *args, **kwargs):
+        try:
+            instance = self.get_object()
+            self.perform_destroy(instance)
+        except Http404:
+            pass
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+    def perform_destroy(self, instance):
+        instance.delete()
+
+    def put(self, request, *args, **kwargs):
+        return self.update(request, *args, **kwargs)
 
 class StatusMaquinasListView(ListView):
     model = StatusMaquinas

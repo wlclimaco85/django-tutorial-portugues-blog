@@ -19,4 +19,4 @@ class StatusMaquinasSerializer(serializers.ModelSerializer):
 class XmlsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Xmls
-        fields = ['id','nomeFile','cnpj','author','xml','parceiro','status','created','updated']
+        fields = ['id','nomeFile','cnpj','author','xml','status','created','updated']

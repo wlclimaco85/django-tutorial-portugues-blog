@@ -40,7 +40,6 @@ class Xmls(models.Model):
     cnpj = models.CharField(max_length=255)
     xml = models.CharField(max_length=20000)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-    parceiro = models.ForeignKey(Parceiro, on_delete=models.CASCADE)
     status = models.CharField(max_length=1)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
