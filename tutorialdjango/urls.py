@@ -27,10 +27,11 @@ from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 router = routers.DefaultRouter()
 #router.register(r'blog', PostViewSet)
 router.register(r'blog', PostViewSet, basename="Blog")
-router.register(r'user', UserViewSet, basename="User")
+router.register(r'user', UserViewSet)
 router.register(r'parceiro', ParceiroViewSet)
 router.register(r'xml', XmlsViewSet )
 router.register(r'statusMaquinas', StatusMaquinasViewSet )
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
