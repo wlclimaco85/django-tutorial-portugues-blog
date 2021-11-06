@@ -29,7 +29,7 @@ router = routers.DefaultRouter()
 router.register(r'blog', PostViewSet, basename="Blog")
 router.register(r'user', UserViewSet)
 router.register(r'parceiro', ParceiroViewSet)
-router.register(r'xml', XmlsViewSet )
+#router.register(r'xml', XmlsViewSet )
 router.register(r'statusMaquinas', StatusMaquinasViewSet )
 
 
@@ -37,6 +37,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('token/', TokenObtainPairView.as_view()),
     path('token/refresh/', TokenRefreshView.as_view()),
+    path('xml/', XmlsViewSet ),
     path('', include(router.urls))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 """

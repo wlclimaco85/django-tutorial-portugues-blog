@@ -19,10 +19,7 @@ class ParceiroFilter(filters.FilterSet):
         model = Parceiro
         fields = (
             'cnpj','author','created'
-        )
-        #    'cnpj': ['icontains'],
-       #     'created': ['iexact', 'lte', 'gte'],
-        
+        )        
 
 class PostListView(ListView):
     model = Post
@@ -56,7 +53,7 @@ class ParceiroDetailView(DetailView):
     model = Parceiro
 
 class ParceiroViewSet(viewsets.ModelViewSet):
-  #  permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated]
     queryset = Parceiro.objects.all()
     serializer_class = ParceiroSerializer
     filterset_class = ParceiroFilter
@@ -67,29 +64,6 @@ class ParceiroViewSet(viewsets.ModelViewSet):
         serializer = self.get_serializer_class()(newest)
         return Response(serializer.data)
 
-   # @action(methods=['get'], detail=False)
-   # def newest(self, request):
-   #     newest = self.get_queryset().order_by('created').last()
-    #    serializer = self.get_serializer_class()(newest)
-   #     return Response(serializer.data)
- #   permission_classes = [IsAuthenticated]
-  #  queryset = Parceiro.objects.all()
-#    serializer_class = ParceiroSerializer
- #   filter_backends = [DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter]
-    #filterset_fields = ['titulo','paginas','editorial__id']
- #   filterset_fields = {
-#        'author': ['gte','lte'],
- #       'status': ['contains'],
- #       'cnpj': ['contains']
- #   }
- #   search_fields = ['author', 'status']
- #   ordering_fields = ['pk', 'author']
- #   ordering = ['pk']
-
-    #def get_queryset(self):
-    #    queryset =Parceiro.objects.all().select_related('parceiro')
-    #    return queryset.filter(paginas__gt=0)
-
 class XmlsListView(ListView):
     model = Xmls
 
@@ -97,7 +71,7 @@ class XmlsDetailView(DetailView):
     model = Xmls
 
 class XmlsViewSet(viewsets.ModelViewSet):
-   #permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated]
     queryset = Xmls.objects.all()
     serializer_class = XmlsSerializer
 
