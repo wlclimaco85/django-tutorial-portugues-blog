@@ -151,4 +151,4 @@ DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 
 # User Model
-AUTH_USER_MODEL = "users.User"
+AUTH_USER_MODEL = "users.UserCustumer"

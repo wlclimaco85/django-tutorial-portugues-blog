@@ -31,6 +31,7 @@ class PostViewSet(viewsets.ModelViewSet):
     permission_classes = [IsAuthenticated]
     queryset = Post.objects.all()
     serializer_class = PostSerializer
+    
 
     def destroy(self, request, *args, **kwargs):
         try:
