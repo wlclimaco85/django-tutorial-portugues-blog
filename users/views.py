@@ -50,3 +50,4 @@ class UserViewSet(viewsets.ModelViewSet):
 
     def put(self, request, *args, **kwargs):
         return self.update(request, *args, **kwargs)
+        
