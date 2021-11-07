@@ -1,8 +1,8 @@
 from django.contrib import admin
 from django.contrib.auth import admin as auth_admin
-from .models import *
+from .models import UserCustumer
 
-admin.register(User, auth_admin.UserAdmin)
+admin.register(UserCustumer, auth_admin.UserAdmin)
 class UserAdmin(admin.ModelAdmin):
     list_display = ("id", "username", "email")
     prepopulated_fields = {"username": ("email",)}
