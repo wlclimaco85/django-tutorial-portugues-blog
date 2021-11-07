@@ -16,7 +16,7 @@ class UserFilter(filters.FilterSet):
     class Meta:
         model = MyUser
         fields = {
-            'username': ['icontains'],
+            'email': ['icontains'],
         }
 
 class UserListView(ListView):
