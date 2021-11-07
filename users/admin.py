@@ -1,12 +1,12 @@
-from django.contrib import admin
-from django.contrib.auth import admin as auth_admin
-from users.models import UserCustumer
+from django import forms
 from django.contrib import admin
 from django.contrib.auth.models import Group
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
 from django.core.exceptions import ValidationError
-from django import forms
+
+from users.models import MyUser
+
 
 class UserCreationForm(forms.ModelForm):
     """A form for creating new users. Includes all the required
@@ -15,7 +15,7 @@ class UserCreationForm(forms.ModelForm):
     password2 = forms.CharField(label='Password confirmation', widget=forms.PasswordInput)
 
     class Meta:
-        model = UserCustumer
+        model = MyUser
         fields = ('email', 'date_of_birth')
 
     def clean_password2(self):
@@ -43,7 +43,7 @@ class UserChangeForm(forms.ModelForm):
     password = ReadOnlyPasswordHashField()
 
     class Meta:
-        model = UserCustumer
+        model = MyUser
         fields = ('email', 'password', 'date_of_birth', 'is_active', 'is_admin')
 
 
@@ -76,5 +76,7 @@ class UserAdmin(BaseUserAdmin):
 
 
 # Now register the new UserAdmin...
-admin.site.register(UserCustumer, UserAdmin)
-
+admin.site.register(MyUser, UserAdmin)
+# ... and, since we're not using Django's built-in permissions,
+# unregister the Group model from admin.
+admin.site.unregister(Group)
