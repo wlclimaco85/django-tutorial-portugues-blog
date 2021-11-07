@@ -1,12 +1,12 @@
 from django.db import models
 from django.urls import reverse
 
-from users.models import UserCustumer
+from users.models import MyUser
 
 class Post(models.Model):
     title = models.CharField(max_length=255)
     slug = models.SlugField(max_length=255, unique=True)
-    author = models.ForeignKey(UserCustumer, on_delete=models.CASCADE)
+    author = models.ForeignKey(MyUser, on_delete=models.CASCADE)
     body = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
@@ -25,7 +25,7 @@ class Post(models.Model):
 class Parceiro(models.Model):
     nome = models.CharField(max_length=255)
     cnpj = models.SlugField(max_length=255, unique=True)
-    author = models.ForeignKey(UserCustumer, on_delete=models.CASCADE)
+    author = models.ForeignKey(MyUser, on_delete=models.CASCADE)
     status = models.CharField(max_length=1)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
@@ -39,7 +39,7 @@ class Xmls(models.Model):
     nomeFile = models.CharField(max_length=255, unique=True)
     cnpj = models.CharField(max_length=255)
     xml = models.CharField(max_length=20000)
-    author = models.ForeignKey(UserCustumer, on_delete=models.CASCADE)
+    author = models.ForeignKey(MyUser, on_delete=models.CASCADE)
     status = models.CharField(max_length=1)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
@@ -51,7 +51,7 @@ class Xmls(models.Model):
 
 class StatusMaquinas(models.Model):
     nomeMaquina = models.CharField(max_length=255)
-    author = models.ForeignKey(UserCustumer, on_delete=models.CASCADE)
+    author = models.ForeignKey(MyUser, on_delete=models.CASCADE)
     status = models.CharField(max_length=1)
     dtUltVezOnLine = models.DateTimeField()
 
