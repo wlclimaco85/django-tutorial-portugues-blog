@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     "rest_framework",
     "rest_framework_simplejwt",
     "django_filters", 
-    'django.contrib.sites',
 ]
 
 MIDDLEWARE = [
@@ -91,11 +90,11 @@ DATABASES = {
 
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
 
-        'NAME': 'd567erk8ppilel',
+        'NAME': 'da963g1sgo608s',
 
-        'USER': 'shzrqmjduceghv',
+        'USER': 'dzwqahkrzvxehn',
 
-        'PASSWORD': 'd1069df1764dd15d36521119a8d04e89263c0b5587421094642f04a963a49fda',
+        'PASSWORD': '999253f29acd96d537e0a2ebbf302ddc25e08007fccb70b16323d0d6c18cd577',
 
         'HOST': 'ec2-3-230-11-138.compute-1.amazonaws.com',
 
