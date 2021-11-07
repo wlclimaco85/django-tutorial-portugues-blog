@@ -3,7 +3,7 @@ from django.contrib import admin
 from django.views.generic import DetailView, ListView
 from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticated
-from .models import UserCustumer
+from users.models import UserCustumer
 from rest_framework.response import Response
 from .serializer import *
 from django_filters  import rest_framework as filters
