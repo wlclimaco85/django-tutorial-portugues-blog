@@ -72,7 +72,7 @@ class XmlsDetailView(DetailView):
     model = Xmls
 
 class XmlsViewSet(viewsets.ModelViewSet):
-    permission_classes = [IsAuthenticated]
+   # permission_classes = [IsAuthenticated]
     queryset = Xmls.objects.all()
     serializer_class = XmlsSerializer
 
